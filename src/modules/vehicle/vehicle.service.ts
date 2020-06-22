@@ -2,7 +2,6 @@ import { VehicleInterface } from './vehicle.interface'
 import { Service } from '../../service/service'
 import { Renavam } from '../../utils/renavam'
 import { Chassi } from '../../utils/chassi'
-import { validate } from 'class-validator'
 
 export class VehicleService extends Service<VehicleInterface> {
   table: string = 'vehicles'
@@ -34,7 +33,29 @@ export class VehicleService extends Service<VehicleInterface> {
     return regexPlaca.test(placa)
   }
 
+  /**
+   *
+   * Possible improvements:
+   * - Return all errors at once, instead of throwing on first error
+   * - Create an error Enum to improve reusability
+   * - Maybe transform it in a micddleware decorator
+   */
   validate(data: VehicleInterface): void {
+    const fields: string[] = [
+      'placa',
+      'chassi',
+      'renavam',
+      'modelo',
+      'marca',
+      'ano',
+    ]
+
+    for (let field of fields) {
+      if (!data.hasOwnProperty(field)) {
+        throw new Error(`O campo ${field} não pode ficar em branco`)
+      }
+    }
+
     if (!this.isLicensePlateValid(data.placa)) {
       throw new Error('A placa informada é inválida')
     }
