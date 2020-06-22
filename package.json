@@ -1,0 +1,33 @@
+{
+  "name": "api-vehicles",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/body-parser": "^1.19.0",
+    "@types/multer": "^1.4.3",
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.4",
+    "typescript": "^3.9.5"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.6",
+    "@types/lowdb": "^1.0.9",
+    "@types/node": "^14.0.13",
+    "body-parser": "^1.19.0",
+    "class-transformer": "^0.2.3",
+    "class-validator": "^0.12.2",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "lowdb": "^1.0.0",
+    "multer": "^1.4.2",
+    "reflect-metadata": "^0.1.13",
+    "routing-controllers": "^0.9.0-alpha.4",
+    "shortid": "^2.2.15",
+    "ts-node": "^8.10.2"
+  }
+}
