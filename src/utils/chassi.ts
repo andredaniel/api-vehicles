@@ -9,8 +9,6 @@ export class Chassi {
       return false
     }
 
-    console.log(`Chassi: ${chassi}`)
-
     const zeroNoPrimeiroDigito: RegExp = /^0/
     const matcherZero: boolean = zeroNoPrimeiroDigito.test(chassi)
 

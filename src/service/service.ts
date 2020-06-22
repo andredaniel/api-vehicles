@@ -22,7 +22,6 @@ export abstract class Service<T> {
   }
 
   update(id: string, data: T): T {
-    console.log(data)
     return this.db.get(this.table).find({ id: id }).assign(data).value()
   }
 
