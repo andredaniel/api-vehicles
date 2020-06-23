@@ -8,6 +8,7 @@ function bootstrap() {
 
   const app = createExpressServer({
     controllers: controllers,
+    cors: true,
   })
 
   const PORT: number = Number(process.env.PORT) || 3000
